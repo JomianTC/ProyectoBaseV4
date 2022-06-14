@@ -32,8 +32,8 @@
             </nav>
         </div>
         <div class="container">
-            <h1>Pagina Principal de la practica 4</h1>
+            <h1 class="text-info text-center">Pagina Principal de la practica 4</h1>
+            <img src="https://www.creadores.unam.mx/wp-content/uploads/2019/04/Escuela-Superior-de-Co%CC%81mputo-1280x720.jpg" class="d-flex justify-content-center">
         </div>
     </body>
-    <img src="https://www.creadores.unam.mx/wp-content/uploads/2019/04/Escuela-Superior-de-Co%CC%81mputo-1280x720.jpg" class="d-flex justify-content-center">
 </html>
