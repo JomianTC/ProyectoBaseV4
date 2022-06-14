@@ -31,5 +31,8 @@
                 </div>
             </nav>
         </div>
+        <div class="container">
+            <h1>Pagina Principal de la practica 4</h1>
+        </div>
     </body>
 </html>
