@@ -21,20 +21,20 @@ import java.util.logging.Logger;
  */
 public class ArticuloDAO {
 
-    private static final String SQL_INSERT = "{call spInsertarA( ?, ?, ?, ?, ?, ?, ?)}";
-    private static final String SQL_UPDATE = "{call spActualizarA( ?, ?, ?, ?, ?, ?, ?, ?)}";
-    private static final String SQL_DELETE = "{call spEliminarA(?)}";
-    private static final String SQL_READ = "{call spSeleccionarUnoA(?)}";
-    private static final String SQL_READ_ALL = "{call spSeleccionarTodoA()}";
+    private static final String SQL_INSERT = "call spinsertarAp( ?, ?, ?, ?, ?, ?, ?);";
+    private static final String SQL_UPDATE = "call spactualizarAp( ?, ?, ?, ?, ?, ?, ?, ?);";
+    private static final String SQL_DELETE = "call speliminarAp(?);";
+    private static final String SQL_READ = "select * from articulo where idArticulo = ?;";
+    private static final String SQL_READ_ALL = "select * from articulo;";
 
     private Connection conexion;
 
     public Connection obtenerConexion() {
 
-        String usuario = "jomian";
-        String clave = "jomian";
-        String url = "jdbc:mysql://localhost:3306/ProyectoBase4";
-        String driverDB = "com.mysql.cj.jdbc.Driver";
+        String usuario = "zfiqcmklzdgczr";
+        String clave = "289ecded42b6283e4ff5692adab12b91c19a83b8b91e08fdf69784574fc88f77";
+        String url = "jdbc:postgresql://ec2-54-157-16-196.compute-1.amazonaws.com/d6mrhnmu5dc0ah";
+        String driverDB = "org.postgresql.Driver";
 
         try {
 
