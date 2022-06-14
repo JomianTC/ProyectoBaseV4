@@ -243,7 +243,7 @@ public class CategoriaServlet extends HttpServlet {
             File reporte;
             byte[] b;
 
-            reporte = new File(getServletConfig().getServletContext().getRealPath("/reportes/ReportePostgres.jasper"));
+            reporte = new File(getServletConfig().getServletContext().getRealPath("/reportes/ReportePostgress.jasper"));
 
             b = JasperRunManager.runReportToPdf(reporte.getPath(), null, dao.obtenerConexion());
 
