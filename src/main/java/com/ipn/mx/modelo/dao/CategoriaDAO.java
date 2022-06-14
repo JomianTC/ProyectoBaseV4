@@ -21,9 +21,9 @@ import java.util.logging.Logger;
  */
 public class CategoriaDAO {
 
-    private static final String SQL_INSERT = "{call spinsertarp(?, ?);}";
-    private static final String SQL_UPDATE = "{call spactualizarrp(?, ?, ?);}";
-    private static final String SQL_DELETE = "{call speliminarp(?);}";
+    private static final String SQL_INSERT = "call spinsertarp(?, ?);";
+    private static final String SQL_UPDATE = "call spactualizarrp(?, ?, ?);";
+    private static final String SQL_DELETE = "call speliminarp(?);";
     private static final String SQL_READ = "select * from categoria where idcategoria = ?;";
     private static final String SQL_READ_ALL = "select * from categoria;";
 
