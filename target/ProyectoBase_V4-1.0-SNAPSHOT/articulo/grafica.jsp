@@ -19,7 +19,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
-                            <a class="nav-link text-info" href="#">Home</a>
+                            <a class="nav-link text-info" href="index.jsp">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-info" href="CategoriaServlet?accion=listaDeCategorias">Listado de Categorias</a>
