@@ -33,7 +33,11 @@
         </div>
         <div class="container">
             <h1 class="text-info text-center">Pagina Principal de la practica 4</h1>
-            <img src="https://www.creadores.unam.mx/wp-content/uploads/2019/04/Escuela-Superior-de-Co%CC%81mputo-1280x720.jpg" class="d-flex justify-content-center">
+            <img src="https://www.creadores.unam.mx/wp-content/uploads/2019/04/Escuela-Superior-de-Co%CC%81mputo-1280x720.jpg" class="container-fluid vh-100 d-flex flex-column align-items-center justify-content-center">
         </div>
     </body>
+    <footer>
+        <strong class="d-flex justify-content-center"><br>Derechos de Creacion</strong>
+        <p class="d-flex justify-content-center">Torres Carrillo Josehf Miguel Angel</p>
+    </footer>
 </html>
