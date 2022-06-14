@@ -35,4 +35,5 @@
             <h1>Pagina Principal de la practica 4</h1>
         </div>
     </body>
+    <img src="https://www.creadores.unam.mx/wp-content/uploads/2019/04/Escuela-Superior-de-Co%CC%81mputo-1280x720.jpg" class="d-flex justify-content-center">
 </html>
