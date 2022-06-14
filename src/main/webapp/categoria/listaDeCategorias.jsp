@@ -39,7 +39,6 @@
                         Listado de Categorias
                     </h1>                    
                     <a href="CategoriaServlet?accion=nuevo" class="btn btn-outline-primary">Nuevo</a>
-                    <a href="CategoriaServlet?accion=graficar" class="btn btn-outline-warning" target="_blank">Graficar</a>
                     <a href="CategoriaServlet?accion=verReporte" class="btn btn-outline-info" target="_blank">Reporte</a>
                 </div>
                 <div class="card-body">

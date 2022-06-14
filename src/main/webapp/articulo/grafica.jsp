@@ -33,7 +33,7 @@
         </div>
     </body>
     <div class="container-fluid vh-100 d-flex flex-column align-items-center justify-content-center">
-        <h1 class="text-info text-center">Grafica de Categorias y Articulos</h1>
+        <h1 class="text-info text-center">Grafica Articulos</h1>
         <img src="grafica.png">
     </div>
 </html>
