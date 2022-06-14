@@ -253,7 +253,7 @@ public class ArticuloServlet extends HttpServlet {
             File reporte;
             byte[] b;
 
-            reporte = new File(getServletConfig().getServletContext().getRealPath("/reportes/ReporteEstadosArticulos.jasper"));
+            reporte = new File(getServletConfig().getServletContext().getRealPath("/reportes/ReportePostgressArticulo.jasper"));
 
             b = JasperRunManager.runReportToPdf(reporte.getPath(), null, dao.obtenerConexion());
 
