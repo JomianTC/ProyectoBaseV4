@@ -4,7 +4,7 @@
  */
 package com.ipn.mx.modelo.dto;
 
-import lombok.AllArgsConstructor;
+import java.io.Serializable;
 import lombok.Data;
 
 /**
@@ -12,14 +12,31 @@ import lombok.Data;
  * @author escom
  */
 @Data
-@AllArgsConstructor
-public class DatosGrafica {
-    
+public class DatosGrafica implements Serializable {
+
     private int cantidad;
     private String nombre;
-    
+
+    public DatosGrafica() {
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     //"select categoriaNombre, count (articulo.idArticulo) from categoria inner join articulo on categoria.idcategoria = articulo.idcategoria group by categoria.idcategoria"
-    
     @Override
     public String toString() {
 

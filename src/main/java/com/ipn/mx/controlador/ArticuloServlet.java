@@ -5,7 +5,9 @@
 package com.ipn.mx.controlador;
 
 import com.ipn.mx.modelo.dao.ArticuloDAO;
+import com.ipn.mx.modelo.dao.DatosGraficaDAO;
 import com.ipn.mx.modelo.dto.ArticuloDTO;
+import com.ipn.mx.modelo.dto.DatosGrafica;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -21,6 +23,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperRunManager;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.ChartUtils;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -30,7 +38,7 @@ import net.sf.jasperreports.engine.JasperRunManager;
 public class ArticuloServlet extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
@@ -100,7 +108,11 @@ public class ArticuloServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     /**
@@ -114,7 +126,11 @@ public class ArticuloServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
 
     /**
@@ -274,8 +290,31 @@ public class ArticuloServlet extends HttpServlet {
         }
     }
     
-    private void mostrarGrafica(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    private void mostrarGrafica(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+        JFreeChart chart = ChartFactory.
+                createBarChart("Articulos por Categoria",
+                        "Categoria"
+                        ,"Articulos",
+                        getDataGrafica(),
+                        PlotOrientation.VERTICAL,true,true,false);
+        ChartPanel panel = new ChartPanel(chart);
+        String archivo = getServletConfig().getServletContext().getRealPath("/grafica.png");
+        ChartUtils.saveChartAsPNG(new File(archivo),chart,800,600);
+        RequestDispatcher rD = request.getRequestDispatcher("/articulo/grafica.jsp");
+        rD.forward(request,response);
+    }
+
+    private DefaultCategoryDataset getDataGrafica() throws SQLException {
+        DefaultCategoryDataset pie = new DefaultCategoryDataset();
+        DatosGraficaDAO dao = new DatosGraficaDAO();
+        List datos = dao.graficar();
+
+        for (Object elemento: datos
+             ) {
+            DatosGrafica dto = (DatosGrafica) elemento;
+            pie.setValue(dto.getCantidad(), dto.getNombre(), dto.getNombre());
+        }
+        return pie;
     }
     
 }

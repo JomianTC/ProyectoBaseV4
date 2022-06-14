@@ -1,0 +1,10 @@
+com\ipn\mx\controlador\CategoriaServlet.class
+com\ipn\mx\modelo\dto\ArticuloDTO.class
+com\ipn\mx\controlador\ArticuloServlet.class
+com\ipn\mx\modelo\dao\CategoriaDAO.class
+com\ipn\mx\modelo\dto\CategoriaDTO.class
+com\ipn\mx\modelo\dto\DatosGrafica.class
+com\ipn\mx\modelo\dao\ArticuloDAO.class
+com\ipn\mx\modelo\dao\DatosGraficaDAO.class
+com\ipn\mx\modelo\entidades\Articulo.class
+com\ipn\mx\modelo\entidades\Categoria.class
